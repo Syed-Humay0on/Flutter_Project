@@ -37,7 +37,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: PageView.builder(
                   itemCount: demo_data.length,
                   controller: _pageController,
-                  onPageChanged: (index){
+                  onPageChanged: (index) {
                     setState(() {
                       _pageindex = index;
                     });
@@ -75,11 +75,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         '<svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><path style="fill:#2D2D2D;" d="M256,0C114.608,0,0,114.608,0,256c0,141.376,114.608,256,256,256s256-114.624,256-256C512,114.608,397.392,0,256,0z"/><polygon style="fill:#FFFFFF;" points="214.656,95.936 378.016,256 214.656,416.064 165.856,366.096 278.208,256 165.856,145.904 "/></svg>',
 
                         // "../../web/assets/right-arrow-next-svgrepo-com.svg",
-                        
+
                         // height: 24,
-                        fit: BoxFit.cover,  
+                        fit: BoxFit.cover,
                         // clipBehavior: Clip.hardEdge,
-                        // clipBehavior: Clip.hardEdge,    
+                        // clipBehavior: Clip.hardEdge,
                       ),
                     ),
                   ),
@@ -109,7 +109,9 @@ class dotindicator extends StatelessWidget {
       height: isActive ? 12 : 4,
       width: 4,
       decoration: BoxDecoration(
-        color: isActive ? Theme.of(context).primaryColor : Theme.of(context).primaryColor.withOpacity(0.4),
+        color: isActive
+            ? Theme.of(context).primaryColor
+            : Theme.of(context).primaryColor.withOpacity(0.4),
         borderRadius: isActive ? BorderRadius.zero : BorderRadius.circular(0),
       ),
     );
@@ -158,24 +160,24 @@ class OnBoardingContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-          const Spacer(),
-          Image.asset(
-            image,
-            height: 250,
-          ),
-          const Spacer(),
-          Text(title,
-              textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineSmall!
-                  .copyWith(fontWeight: FontWeight.w500)),
-          const SizedBox(height: 20),
-          Text(
-            description,
-            textAlign: TextAlign.center,
-          ),
-          const Spacer(),
-        ]);
+      const Spacer(),
+      Image.asset(
+        image,
+        height: 250,
+      ),
+      const Spacer(),
+      Text(title,
+          textAlign: TextAlign.center,
+          style: Theme.of(context)
+              .textTheme
+              .headlineSmall!
+              .copyWith(fontWeight: FontWeight.w500)),
+      const SizedBox(height: 20),
+      Text(
+        description,
+        textAlign: TextAlign.center,
+      ),
+      const Spacer(),
+    ]);
   }
 }
